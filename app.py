@@ -81,6 +81,17 @@ Weiter unten: **❓ Kernfragen**, die Experimente **🔬 Grenzkarte über β**, 
 """
 )
 
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/ware-unterwegs-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Stellen Sie sich ein Lager vor, das nachbestellt, obwohl die Ware erst nach einer festen Lieferzeit ankommt. Wer nur auf das Regal schaut, bestellt ein zweites Mal, was schon unterwegs ist, und das Lager kann sich aufschaukeln. Die Demo rechnet in einem einfachen Modell nach, was sich ändert, wenn die Regel die **Ware unterwegs** mit einem einstellbaren **Leitungsgewicht** mitzählt: Bis zu welcher Reaktionsstärke bleibt das Lager ruhig, wie schnell klingt ein Bedarfsstoß ab, und was passiert, wenn die Lieferzeit falsch geschätzt ist? Es ist eine Rechenregel mit fester Lieferzeit, ohne Meldeverzug und ohne Bestellgrenze nach unten, kein Abbild von Menschen. Die Ergebnisse gelten nur in diesem Modell.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/ware-unterwegs-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
+
 with st.expander("So funktioniert die Leitung mitrechnen", expanded=True):
     st.markdown(
         """
@@ -259,6 +270,24 @@ st.markdown(
 st.markdown("---")
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/ware-unterwegs-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind die Lieferzeit $L$, die Anpassung $\alpha$, das Leitungsgewicht $\beta$ und die Bedarfsabweichung $e_t$ (bei Stoß: $e_0 = 1$, sonst 0). Gesucht sind die Stabilitätsgrenze, die Abklingzeit eines Stoßes und der Dauerfehler bei falscher Soll-Leitung. Alle Größen sind Abweichungen vom Gleichgewicht, Zähleinheit ist die Periode.
+
+| Symbol | Bedeutung |
+|---|---|
+| $i_t$ | Bestand minus Soll am Ende der Periode $t$ |
+| $u_t$ | Bestellung in Periode $t$ minus mittlerer Bedarf $d$ |
+| $e_t$ | Bedarfsabweichung in Periode $t$ |
+| $L$, $\alpha$, $\beta$ | Lieferzeit in Perioden; Anpassung (Anteil der Abweichung, den die Bestellung ausgleicht); Leitungsgewicht (Anteil der Ware unterwegs, den die Regel mitzählt) |
+| $\Delta W$, $W^{*}$ | Fehler der Soll-Leitung $W^{*} = \hat d\,(\hat L - 1)$; $\Delta W = d\,(L-1) - W^{*}$ |
+| $P$, $\rho$ | charakteristisches Polynom; Spektralradius, der größte Betrag einer Wurzel von $P$ |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/ware-unterwegs-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Gegeben und gesucht.** Gegeben sind die Lieferzeit $L$, die Anpassung $\alpha$, das Leitungsgewicht $\beta$ und die Bedarfsabweichung $e_t$ (bei Stoß: $e_0 = 1$, sonst 0).
