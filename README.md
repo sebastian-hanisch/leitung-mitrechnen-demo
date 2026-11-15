@@ -1,7 +1,6 @@
 # Die Leitung mitrechnen – was die Bestellregel von der Ware unterwegs weiß – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-leitung-mitrechnen-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-leitung-mitrechnen-demo.streamlit.app/)**
 
 Stück 2 der Linie **Rückkopplung und Verzögerung** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Vorgänger ist das Lager ganz ohne Leitung, [`lager-lieferzeit-demo`](https://github.com/sebastian-hanisch/lager-lieferzeit-demo): Dort braucht die beste Einstellung schon bei L = 3 nur α = 0,148 und bei L = 12 nur 0,032,
 und selbst sie klingt erst nach dem 5,5- bis 7,2fachen der Lieferzeit ab (Schwelle 1 %, L = 2 bis 24; Zahlen unten). Dieses Stück **rechnet die Ware unterwegs mit** (Kante `fix`) und fragt, was das bringt, was es kostet und wie genau die Rechnung stimmen muss.
